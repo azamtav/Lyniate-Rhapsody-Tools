@@ -18,6 +18,14 @@ public class RhapsodyHttpClient
     private String baseAuthUsername;
     private String baseAuthPassword;
 
+    /**
+     * Rhapsody HTTP Client Constructor
+     * 
+     * @param baseURL the base url for the Rhapsody API
+     * @param baseAuthUsername the username for the Rhapsody API User
+     * @param baseAuthPassword the password for the Rhapsody API User
+     * @return RhapsodyHttpClient
+     */
     public RhapsodyHttpClient(String baseURL, String baseAuthUsername, String baseAuthPassword)
     {
         this.baseURL = baseURL;
@@ -31,6 +39,14 @@ public class RhapsodyHttpClient
         );
     }
 
+    /**
+     * Performs an HTTP Get with optional headers and query parameters
+     * 
+     * @param path the relative path after the baseURL to do an HTTP GET
+     * @param headers any additional headers to append to the request
+     * @param baseAuthPassword the password for the Rhapsody API User
+     * @return HttpResponse
+     */
     public HttpResponse HttpGet(String path, Map headers = null, Map queryParameters = null)
     {
         String url = baseURL + path;
@@ -96,6 +112,12 @@ public class RhapsodyHttpClient
         return null;
     }
 
+    /**
+     * Sets the headers for the request. Automatically includes the CSRF Token header with the request.
+     * 
+     * @param request the request object to append to
+     * @param headers any additional headers to append to the request     
+     */
     private void setHeaders(HttpMessage request, Map headers)
     {
         if (this.CSRFToken != null)
@@ -133,3 +155,6 @@ public class RhapsodyHttpClient
         return response;
     }
 }
+
+def x = new RhapsodyHttpClient("baseUrl", "username", "baseAuthPassword")
+
