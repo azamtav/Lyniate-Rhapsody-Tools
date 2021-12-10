@@ -11,10 +11,6 @@ import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.apache.http.entity.StringEntity;
-import java.nio.charset.StandardCharsets;
-import java.util.LinkedHashMap;
-import java.util.Calendar;
-import groovy.util.XmlParser;
 import groovy.json.JsonSlurper;
 import org.apache.log4j.Logger;
 
