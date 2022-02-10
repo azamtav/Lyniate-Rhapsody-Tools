@@ -155,6 +155,3 @@ public class RhapsodyHttpClient
         return response;
     }
 }
-
-def x = new RhapsodyHttpClient("baseUrl", "username", "baseAuthPassword")
-
